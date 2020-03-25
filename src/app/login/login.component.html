@@ -1,0 +1,29 @@
+<div style="width: 375px; height: 100%; margin: auto;">
+    <ion-header>
+        <ion-toolbar>
+          <ion-title>
+            Acesso
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content>
+        <ion-card>
+          <form #f="ngForm" (ngSubmit)="processLogin(f)" novalidate>
+            <ion-item>
+              <ion-label position="stacked">Consultor(a)</ion-label>
+              <ion-input name="username" [(ngModel)]="username" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Senha</ion-label>
+              <ion-input name="password" [(ngModel)]="password" type="password"></ion-input>
+            </ion-item>
+            <ion-card-content>
+              <div class="ion-padding">
+                <ion-button expand="block" type="submit" class="ion-no-margin" color="success">Entrar</ion-button>
+              </div>
+            </ion-card-content>
+          </form>
+        </ion-card>
+      </ion-content>      
+</div>

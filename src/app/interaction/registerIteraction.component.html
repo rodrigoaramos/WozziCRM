@@ -1,0 +1,53 @@
+<div style="width: 375px; height: 100%; margin: auto;">
+  <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Registra interação
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+  <ion-content>
+      <ion-card class="welcome-card">
+        <ion-card-content>
+          <form #form="ngForm" novalidate>
+            <ion-grid style="width: 100%;">
+              <ion-row>
+                <ion-col size="6" size-md>
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Data registro</ion-label>
+                    <ion-datetime style="font-size: 11pt;"  displayFormat="DD/MM/YYYY" type="text" readonly [(ngModel)]="historico.dataRegistro" name="dataregistro" ngControl="dataRegistro"></ion-datetime>
+                </ion-col>
+                <ion-col size="6" size-md>
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Próxima interação</ion-label>
+                    <ion-datetime style="font-size: 11pt; font-weight: bold; color: black;" displayFormat="DD/MM/YYYY" type="text" [(ngModel)]="historico.dataProxima" name="dataproxima" ngControl="dataProxima"></ion-datetime>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="12" size-md>
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Status</ion-label>
+                    <ion-select interface="popover" style="font-size: 11pt; font-weight: bold; color: black;" placeholder="Selecione" [(ngModel)]="historico.idStatus" name="idstatus" ngControl="idstatus">
+                      <ion-select-option *ngFor="let it of statuses" [value]="it.id">{{ it.descricao }}</ion-select-option>
+                    </ion-select>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="12" size-md>
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Histórico</ion-label>
+                    <ion-textarea style="font-size: 11pt; font-weight: bold; color: black;" [(ngModel)]="historico.comentario" name="comentario" ngControl="comentario" placeholder="(Máximo 255 caracteres)" rows="8"></ion-textarea>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="4" size-md>
+                  <ion-button type="button" size="small" color="primary" (click)="cancelRegister()" class="ion-text-capitalize" style="width: 100px;">Cancelar</ion-button>
+                </ion-col>
+                <ion-col size="2" size-md></ion-col>
+                <ion-col size="6" size-md>
+                  <ion-button type="button" size="small" color="success" (click)="saveRegister()" class="ion-text-capitalize" style="width: 100px;">Adicionar</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </form>
+        </ion-card-content>
+      </ion-card>
+  </ion-content>
+</div>

@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Básico
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col class="ion-text-start">
+                <ion-button size="small" color="primary" (click)="goListOports()"><span class="ion-text-capitalize">voltar</span></ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Oportunidade</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-grid style="width: 100%; height: 100%; color: black;">
+            <ion-row>
+                <ion-col size="8">
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Data registro</ion-label>
+                    <p><strong>{{ getDataRegistro() }}</strong></p>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Lead</ion-label>
+                    <p><strong>{{ getEhLead() }}</strong></p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Produto</ion-label>
+                    <p><strong>{{ getProduto() }}</strong></p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Cliente</ion-label>
+                    <p><strong>{{ getCliente() }}</strong></p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="8">
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Status</ion-label>
+                    <p><strong>{{ getStatus() }}</strong></p>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Progresso</ion-label>
+                    <p><strong>{{ getPercentual() }}</strong></p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Cliente</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-grid style="width: 100%; height: 100%; color: black;">
+            <ion-row>
+                <ion-col size="12">
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Contato</ion-label>
+                    <p><strong>{{ getContato() }}</strong></p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Cargo/função</ion-label>
+                    <p><strong>{{ getCargoFuncao() }}</strong></p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-label position="stacked" style="font-size: 9pt; font-style: italic;" color="primary">Telefone</ion-label>
+                    <p><strong>{{ getTelefone() }}</strong></p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

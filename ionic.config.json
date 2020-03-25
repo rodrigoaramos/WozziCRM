@@ -1,0 +1,7 @@
+{
+  "name": "wozzicrm",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

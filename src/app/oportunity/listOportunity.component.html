@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lista de Oportunidades
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+  <ion-list>
+    <ion-item class="item-text-wrap" *ngFor="let it of oportunities">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10" size-md>
+              <h6><strong>{{ it.cliente }}</strong></h6>
+          </ion-col>
+          <ion-col size="2" size-md class="ion-padding-vertical">
+              <ion-badge *ngIf="it.propostas > 0" color="success">{{ it.propostas }}</ion-badge>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" size-md>
+              <p><span style="font-size: 9pt; font-style: italic;">Interação: </span><span style="font-size: 9pt; font-weight: bold;">{{ formatDate(it.dataInteracao) }} - {{ it.andamento }}</span></p>
+              <p><span style="font-size: 9pt; font-style: italic;">Produto: </span><span style="font-size: 9pt; font-weight: bold;">{{ it.produto }}</span></p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-end">
+          <ion-col size="3" size-md>
+            <ion-button class="ion-text-capitalize" color="primary" (click)="detail(it.id)">Detalhes</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  <ion-toast-controller></ion-toast-controller>
+</ion-content>

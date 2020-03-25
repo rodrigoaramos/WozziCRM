@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Propostas
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-list>
+        <ion-item class="item-text-wrap" *ngFor="let it of propostas">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12" size-md>
+                <h6><strong>{{ it.valorTotal | currency: it.moeda :'symbol':'0.2':'pt' }}</strong></h6>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6" size-md>
+                  <div style="font-size: 9pt; font-style: italic; color: blue;">Quantidade:</div>
+                  <div style="font-size: 11pt; font-weight: bold; text-align: center;">{{ it.quantidade }}</div>
+              </ion-col>
+              <ion-col size="6" size-md>
+                  <div style="font-size: 9pt; font-style: italic; color: blue;">Validade:</div>
+                  <div style="font-size: 11pt; font-weight: bold; text-align: center;" [ngClass]="{'prop-vencida': isVencida(it.dias)}">{{ formatDate(it.dataValidade) }}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6" size-md>
+                  <div style="font-size: 9pt; font-style: italic; color: blue;">Moeda:</div>
+                  <div style="font-size: 11pt; font-weight: bold; text-align: center;">{{ it.moeda }}</div>
+              </ion-col>
+              <ion-col size="6" size-md>
+                  <div style="font-size: 9pt; font-style: italic; color: blue;">Situação:</div>
+                  <div style="font-size: 11pt; font-weight: bold; text-align: center;" [ngClass]="{'prop-vencida': isVencida(it.dias), 'prop-ativa': !isVencida(it.dias)}">{{ getSituacao(it.dias) }}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-list>
+  </ion-content>
+  
